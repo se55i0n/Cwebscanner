@@ -5,4 +5,4 @@
 ![](https://github.com/se55i0n/Cwebscanner/blob/master/Snip20171025_41.png)
       
       支持自定义端口扫描
-![](https://github.com/se55i0n/Cwebscanner/blob/master/Snip20171025_41.png)
+![](https://github.com/se55i0n/Cwebscanner/blob/master/Snip20171025_42.png)
