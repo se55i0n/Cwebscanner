@@ -10,6 +10,7 @@ import time
 import socket
 import requests
 import dns.resolver
+from gevent import monkey
 from bs4 import BeautifulSoup
 from multiprocessing.dummy import Pool as ThreadPool
 from multiprocessing.dummy import Lock
@@ -18,6 +19,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 reload(sys)
 sys.setdefaultencoding('utf-8')
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+monkey.patch_all()
 
 class Scanner(object):
     def __init__(self, target, threads, custom_ports):
