@@ -74,8 +74,8 @@ class Scanner(object):
             url    = 'http://{}:{}'.format(str(ip), str(port))
             header = {'User-Agent': 'Mozilla/5.0 (compatible, MSIE 11, Windows NT 6.3)'}
             res    = requests.get(url, timeout=1, headers=header, verify=False, allow_redirects=True)
-            serv   = res.headers['Server'][:17] if 'Server' in str(res.headers) else ''
-            title  = BeautifulSoup(res.content,'lxml').title.text.strip('\n').strip()[:16]
+            serv   = res.headers['Server'].split()[0] if 'Server' in str(res.headers) else ''
+            title  = BeautifulSoup(res.content,'lxml').title.text.strip('\n').strip()
             result = '{}[+] {}{}{}{}{}'.format(self.G, url.ljust(28), str(res.status_code).ljust(6), serv.ljust(24), title, self.W)
             self.lock.acquire()
             print result
